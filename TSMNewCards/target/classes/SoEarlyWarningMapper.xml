@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bmac.mapper.SoEarlyWarningMapper">
+	<insert id="insertToSoEarlyWarning" parameterType="com.bmac.entity.SoEarlyWarning" useGeneratedKeys="true" keyProperty="id">
+		insert into so_early_warning
+			(quota_code,quota_present,warning_present,status,type,
+			create_time,create_user,update_time,update_user,
+			oper_status)
+		values
+		   (#{quotaCode},#{quotaPresent},#{warningPresent},#{status},#{type},
+			#{createTime},#{createUser},#{updateTime},#{updateUser},
+			#{operStatus})
+	</insert>
+</mapper>

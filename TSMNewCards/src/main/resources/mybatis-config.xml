@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<environments default="dev">
+		<environment id="dev">
+			<!-- 
+				JDBC:由数据库进行事务管理
+				MANAGED:由web容器进行事务管理
+			 -->
+			<transactionManager type="JDBC"/>
+			<!-- 使用连接池 -->
+			<dataSource type="POOLED">
+				<property name="driver" value="com.mysql.jdbc.Driver"/>
+				<!--<property name="url" value="jdbc:mysql://172.16.7.110:3306/bmac_reportcenter?autoReconnect=true"/>-->
+				<property name="url" value="jdbc:mysql://172.16.4.106:3306/bmac_reportcenter?autoReconnect=true"/> 
+				<property name="username" value="root"/>
+				<property name="password" value="root"/>
+			</dataSource>
+		</environment>
+	</environments>
+	<!-- 加载映射文件 -->
+	<mappers>
+		<mapper resource="SoEarlyWarningMapper.xml"/>
+		<mapper resource="SoAndroidTimeMapper.xml"/>
+		<mapper resource="SoAndroidErrorMapper.xml" />
+	</mappers>
+</configuration>

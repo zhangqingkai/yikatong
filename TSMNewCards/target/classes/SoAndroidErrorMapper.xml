@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bmac.mapper.SoAndroidErrorMapper">
+	<insert id="insertToSoAndroidError" parameterType="com.bmac.entity.SoAndroidError" useGeneratedKeys="true" keyProperty="id" >
+		insert into so_android_error
+			(sell_no,card_code,user_mobile,device_id,response_code,message,error_time,
+			quota_present,create_time,start_time,end_time,warning_id)
+		values
+		   (#{sellNo},#{cardCode},#{userMobile},#{deviceID},
+			#{responseCode},#{message},#{errorTime},#{quotaPresent},
+			#{createTime},#{startTime},#{endTime},#{wariningID})
+	</insert>
+</mapper>
